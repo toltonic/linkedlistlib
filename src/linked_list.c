@@ -18,8 +18,16 @@ int list_push_front(LinkedList *list, int value){
      * increment size
      * return 0 if malloc fails
      */
+    struct Node *node = malloc(sizeof(struct Node));
+
+    if (node == NULL){
+        return 0;
+    }
+
+    node->data = value;
+    node->next = list->head;
+    list->head = node;
     list->size++;
-    list->head 
 
     return 1;
 }
