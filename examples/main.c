@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <linked_list.h>
+#include "linked_list.h"
 
 int main(){
-    LinkedList spell_list = {0};
+    LinkedList spell_list;
 
     list_init(&spell_list);
 
