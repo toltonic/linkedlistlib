@@ -76,3 +76,43 @@ int list_push_back(LinkedList *list, int value){
     return 1;
 }
 
+int list_insert_after(LinkedList *list, int target, int value){
+    /* Find the first node containing target
+     * Insert a new node immediately after in
+     * return 1 if it succeeds
+     * return 0 if target is not found
+     * return 0 if malloc fails 
+     */
+
+    if(list->size == 0){
+        printf("The list is empty\n");
+        return 0;
+    }
+
+    Node *node = malloc(sizeof(Node));
+
+    if(node == NULL){
+        return 0;
+    }
+
+    node->data = value;
+
+    Node *current = list->head;
+
+    while(current != NULL && current->data != target){
+        current = current->next;
+    }
+
+    if(current == NULL){
+        printf("target was not found in the list\n");
+        return 0;
+    }
+
+    Node *after_insert_node = current->next;
+
+    current->next = node;
+    node->next = after_insert_node;
+
+    list->size++;
+    return 1;
+}

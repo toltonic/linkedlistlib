@@ -19,4 +19,6 @@ int list_push_back(LinkedList *list, int value);
 
 void list_print(const LinkedList *list);
 
+int list_insert_after(LinkedList *list, int target, int value);
+
 #endif

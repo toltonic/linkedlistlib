@@ -7,6 +7,7 @@ int main(){
     LinkedList spell_list;
 
     list_init(&spell_list);
+    list_insert_after(&spell_list, 0, 4);
 
     list_print(&spell_list);
 
@@ -27,6 +28,9 @@ int main(){
     list_print(&spell_list);
 
     list_push_front(&spell_list, 2000);
+
+    list_insert_after(&spell_list, 17, 4);
+    list_insert_after(&spell_list, 0, 4);
 
     list_print(&spell_list);
 
