@@ -181,3 +181,23 @@ int list_remove(LinkedList *list, int value){
     list->size--;
     return 1;
 }
+
+Node *list_find(LinkedList *list, int value){
+
+    Node *node = list->head;
+
+    while(node != NULL && node->data != value){
+        node = node->next;
+    }
+
+    if (node == NULL){
+        return NULL;
+    }
+
+    return node;
+}
+
+int list_size(const LinkedList *list){
+    return list->size;
+}
+

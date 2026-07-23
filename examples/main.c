@@ -7,39 +7,25 @@ int main(){
     LinkedList spell_list;
 
     list_init(&spell_list);
-    list_insert_after(&spell_list, 0, 4);
 
 
-    list_push_back(&spell_list, 12);
+
+    list_push_front(&spell_list, 21);
+
+    int size2 = list_size(&spell_list);
+
+    printf("%d\n", size2);
 
 
-    list_push_front(&spell_list, 15);
 
-
-    list_push_front(&spell_list, 17);
-
-
-    list_push_back(&spell_list, 1);
-
-
-    list_push_front(&spell_list, 2000);
-
-    list_insert_after(&spell_list, 17, 4);
-    
-    list_insert_after(&spell_list, 0, 4);
-
-    list_print(&spell_list);
 
     list_pop_front(&spell_list);
-    list_print(&spell_list);
 
-    list_remove(&spell_list, 17);
+    int size1 = list_size(&spell_list);
 
-    list_print(&spell_list);
+    printf("%d\n", size1);
 
-    list_remove(&spell_list, 1);
 
-    list_print(&spell_list);
 
     return 0;
 }

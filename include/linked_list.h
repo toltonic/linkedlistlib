@@ -25,4 +25,8 @@ int list_pop_front(LinkedList *list);
 
 int list_remove(LinkedList *list, int value);
 
+Node *list_find(LinkedList *list, int value);
+
+int list_size(const LinkedList *list);
+
 #endif
