@@ -29,4 +29,6 @@ Node *list_find(LinkedList *list, int value);
 
 int list_size(const LinkedList *list);
 
+void list_clear(LinkedList *list);
+
 #endif

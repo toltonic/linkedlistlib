@@ -201,3 +201,21 @@ int list_size(const LinkedList *list){
     return list->size;
 }
 
+void list_clear(LinkedList *list){
+
+    Node *node = list->head;
+    Node *node_freed = node;
+
+    while (node != NULL){
+
+        node_freed = node;
+        
+        node = node->next;
+
+        free(node_freed);
+
+    }
+
+    list->head = NULL;
+    list->size = 0;
+}

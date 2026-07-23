@@ -4,28 +4,34 @@
 #include "linked_list.h"
 
 int main(){
-    LinkedList spell_list;
+    LinkedList lista;
 
-    list_init(&spell_list);
+    list_init(&lista);
+    list_print(&lista);
 
+    list_push_front(&lista, 24);
+    list_print(&lista);
 
+    list_push_back(&lista, 73);
+    list_print(&lista);
 
-    list_push_front(&spell_list, 21);
+    Node *node = list_find(&lista, 73);
+    list_print(&lista);
 
-    int size2 = list_size(&spell_list);
+    if(node == NULL){
+        return 0;
+    }
 
-    printf("%d\n", size2);
+    list_insert_after(&lista, 24, 7);
+    list_print(&lista);
 
+    list_remove(&lista, 24);
+    list_print(&lista);
 
+    list_pop_front(&lista);
+    list_print(&lista);
 
-
-    list_pop_front(&spell_list);
-
-    int size1 = list_size(&spell_list);
-
-    printf("%d\n", size1);
-
-
-
+    list_clear(&lista);
+    list_print(&lista);
     return 0;
 }
